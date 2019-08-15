@@ -12,12 +12,19 @@ class Movie < ActiveRecord::Base
   validate :validate_board
   attr_protected :id
 
-  protected
+  scope :visible, lambda {|*args|
+    joins(:project).
+        where(Project.allowed_to_condition(args.shift || User.current, :view_news, *args))
+  }
 
   def validate_board
     if parent_id && parent_id_changed?
       errors.add(:parent_id, :invalid) unless valid_parents.include?(parent)
     end
+  end
+
+  def self.latest(reservation = Reservation.current, count = 5)
+    visible(reservation).preload(:author, :project).order("#{News.table_name}.created_on DESC").limit(count).to_a
   end
 end
 
