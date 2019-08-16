@@ -1,19 +1,14 @@
 class MoviesController < ApplicationController
-    default_search_scope :messages
-    before_action :find_movie_by_movie_id, :find_board_if_available, :authorize
-    accept_rss_auth :index, :show
-
-    helper :sort
-    include SortHelper
-    helper :watchers
+    # default_search_scope :messages
+    # before_action :find_movie_by_movie_id, :find_board_if_available, :authorize
+    # accept_rss_auth :index, :show
+    #
+    # helper :sort
+    # include SortHelper
+    # helper :watchers
 
     def index
-      @boards = @project.boards.preload(:last_message => :author).to_a
-      # show the board if there is only one
-      if @boards.size == 1
-        @board = @boards.first
-        show
-      end
+      @movie
     end
 
     def show
@@ -40,14 +35,14 @@ class MoviesController < ApplicationController
     end
 
     def new
-      @board = @movie.boards.build
-      @board.safe_attributes = params[:board]
+      @movie = @movie.boards.build
+      @movie.safe_attributes = params[:board]
     end
 
     def create
-      @board = @movie.boards.build
-      @board.safe_attributes = params[:board]
-      if @board.save
+      @movie = @movie.boards.build
+      @movie.safe_attributes = params[:board]
+      if @movie.save
         flash[:notice] = l(:notice_successful_create)
         redirect_to_settings_in_projects
       else
@@ -59,7 +54,7 @@ class MoviesController < ApplicationController
     end
 
     def update
-      @board.safe_attributes = params[:board]
+      @movie.safe_attributes = params[:board]
       if @movie.save
         respond_to do |format|
           format.html {
@@ -89,7 +84,7 @@ class MoviesController < ApplicationController
     end
 
     def find_board_if_available
-      @board = @movie.movie.find(params[:id]) if params[:id]
+      @movie = @movie.movie.find(params[:id]) if params[:id]
     rescue ActiveRecord::RecordNotFound
       render_404
     end
