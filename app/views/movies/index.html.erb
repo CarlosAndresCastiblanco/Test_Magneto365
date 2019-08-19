@@ -1,17 +1,18 @@
 
+<h1>Listing articles</h1>
 
-<%= form_with scope: :article, url: movies_path, local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.name_movie %></td>
+      <td><%= movie.day_present %></td>
+      <td><%= link_to 'Show', movie_path(movie) %></td>
+    </tr>
+  <% end %>
+</table>

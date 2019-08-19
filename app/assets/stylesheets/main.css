@@ -10,6 +10,9 @@
     font-size: 18px;
     height: 60px;
 }
+body {
+    position: relative;
+}
 html, body {
     height: 100%;
     font-family: 'Josefin Sans', sans-serif;
@@ -28,9 +31,11 @@ html, body {
 .button-menu:focus {
     outline: 0;
     box-shadow: none;
-    background-color: #69b8ff!important;
 }
 
+.selected-button {
+    background-color: #69b8ff!important;
+}
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
@@ -38,4 +43,26 @@ html, body {
 
 .icon {
     padding: inherit;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    padding-bottom: 8px;
+    background-color: rgba(0, 136, 255, 0.527);
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.movie {
+    position: relative;
 }

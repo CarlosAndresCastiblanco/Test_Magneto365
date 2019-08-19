@@ -1,0 +1,41 @@
+.side-menu {
+    background-color: #0089FF;
+    color: white;
+    text-align: center;
+    height: 100%;
+}
+
+.button-menu {
+    background-color: #0089FF;
+    font-size: 18px;
+    height: 60px;
+}
+html, body {
+    height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.fill-placeit-logo {
+    fill: white;
+}
+.button-menu {
+    color: white;
+    width: 80%;
+    border-top-left-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+}
+
+.button-menu:focus {
+    outline: 0;
+    box-shadow: none;
+    background-color: #69b8ff!important;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.icon {
+    padding: inherit;
+}

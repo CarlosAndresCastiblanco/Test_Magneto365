@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_movie: 
+  name_movie: MyString
+  url_picture: MyString
+  day_present: 2019-08-16
+  max_size: 
+
+two:
+  id_movie: 
+  name_movie: MyString
+  url_picture: MyString
+  day_present: 2019-08-16
+  max_size: 

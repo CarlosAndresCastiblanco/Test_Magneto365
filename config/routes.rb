@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'test/index'
-    # root :to => 'welcome#index', :as => 'home'
-    # root :to => 'movies#index', :as => 'home'
-
+  get 'reservation/index'
+  get 'welcome/index'
+  root 'welcome#index'
     resources :movies
+  post 'movie_create' => 'movies#create'
+
     # post 'update_movie' => 'movie#update_issues'
     # post 'create_movie' => 'movie#index'
     # get 'home_controller/index'
