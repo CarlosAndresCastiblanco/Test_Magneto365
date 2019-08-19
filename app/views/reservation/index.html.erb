@@ -92,118 +92,15 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
-          <tr>
-            <td>Avatar</td>
-            <td>Carlos Castiblanco</td>
-            <td>cc@prueba.com</td>
-            <td>11212354654</td>
-            <td>3196147563</td>
-          </tr>
+          <% @reservations.each do |reservation| %>
+            <tr>
+              <td><%= reservation.id_reservation%></td>
+              <td><%= reservation.name_user%></td>
+              <td><%= reservation.email%></td>
+              <td><%= reservation.identification%></td>
+              <td><%= reservation.number_phone%></td>
+            </tr>
+          <% end %>
           </tbody>
         </table>
       </div>

@@ -1,15 +1,21 @@
 class ReservationController < ApplicationController
+
   def index
+    @reservations = Reservation.all
   end
 
   def create
-    @reservation = Reservation.new(params)
+    @movie = Movie.find(params[:idMovieReserve])
+    @reservation = Reservation.new(
+        :id_reservation => @movie.name_movie,
+        :identification => params[:cedulaReserve],
+        :email => params[:emailReserve],
+        :name_user => params[:nombreReserve],
+        :number_phone => params[:celularReserve]
+    )
     @reservation.save
-    redirect_to @reservation
-  end
-
-  private
-  def params
-    params.require(:reservation).permit(:id_reservation, :identification, :email, :name_user, :number_phone)
+    zise = @movie.max_size.to_i + 1
+    @movie.max_size = zise.to_s
+    @movie.save
   end
 end

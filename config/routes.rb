@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
     resources :movies
   post 'movie_create' => 'movies#create'
+  post 'reservation_create' => 'reservation#create'
 
     # post 'update_movie' => 'movie#update_issues'
     # post 'create_movie' => 'movie#index'

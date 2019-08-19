@@ -83,6 +83,7 @@
       <!--Peliculas-->
       <div class="row mb-2">
         <% @movies.each do |movie| %>
+          <% if movie.max_size.to_i <= 10 %>
           <div class="col-md-3 mb-3">
             <div class="movie">
               <img src="<%= movie.url_picture%>"  class="img-fluid rounded" alt="Responsive image">
@@ -93,6 +94,7 @@
               </div>
             </div>
           </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -165,7 +167,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="#">
+        <form method="POST" action="reservation_create">
           <input type="hidden" id="dateReserve" name="dateReserve">
           <input type="hidden" id="idMovieReserve" name="idMovieReserve">
           <div class="form-row">
